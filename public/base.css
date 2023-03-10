@@ -1,0 +1,19 @@
+* {
+    font-family: 'Oswald', sans-serif;
+}
+
+main {
+    text-align: center;
+}
+
+main h1 {
+    font-size: 40px;
+}
+
+main p {
+    font-size: 20px;
+}
+
+main a {
+    color: blue;
+}

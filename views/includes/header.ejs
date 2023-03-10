@@ -1,0 +1,18 @@
+<header>
+    <nav>
+        <ul>
+            
+            <li><a href="/">Home</a></li>
+            <% if(!locals.isauth) { %>
+            <li><a href="/signup">Signup</a></li>
+            <li><a href="/login">login</a></li>
+            <% } %>
+
+            <% if(locals.isauth) { %>
+             <li><a href="/admin">Admin</a></li>
+             <li><a href="/logout">Log out</a></li>
+            <% } %>
+            
+        </ul>
+    </nav>
+</header>

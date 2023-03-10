@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="header.css" />
+    <link rel="stylesheet" href="signup login.css" />
+  </head>
+  <body>
+    <%- include('includes/header.ejs') %>
+    <h1>Administrative Blog Posts</h1>
+    <main>
+      <form action="/admin" method="POST" id="content-form">
+        <h2>Create Your Blog Posts</h2>
+        <label for="name">Your name</label>
+        <input type="text" name="name" id="name" />
+        <label for="title">Title of your Content</label>
+        <input type="text" name="title" id="title" />
+        <label for="content">Main Content</label>
+        <textarea name="content" id="content" cols="30" rows="10"></textarea>
+        <button>Save</button>
+      </form>
+      <section id="content-boxSection">
+        <p>All blog posts</p>
+        <% for (const input of data) { %>
+        <div id="content-box">
+          <h2><%= input.title %></h2>
+          <h4><%= input.content %></h4>
+          <p>by <%= input.name %></p>
+          <div id="contenteditdel">
+            <form
+              id="formedit"
+              action="/posts/<%=input._id%>/delete"
+              method="POST"
+            >
+              <button>Delete</button>
+            </form>
+            <a href="/posts/<%=input._id%>/edit">Edit</a>
+          </div>
+        </div>
+        <% } %>
+      </section>
+    </main>
+  </body>
+</html>

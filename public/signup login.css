@@ -1,0 +1,103 @@
+* {
+    font-family: 'Oswald', sans-serif;
+}
+
+
+form {
+    margin: 200px auto;
+    width: 600px;
+    padding:30px 50px ;
+    text-align: center;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 2px 4px 8px rgba(0,0,0,0.6);
+    
+}
+
+input {
+    font: inherit;
+    font-size: 1.25rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    border: 1px solid rgb(204, 204, 204);
+    margin-bottom: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    color: rgb(78, 73, 73); 
+    text-align: center;
+}
+
+label {
+    font-size: 20px;
+}
+
+button {
+    padding: 10px 25px;
+    font-size: 15px;
+    border-radius: 6px;
+    background-color: rgba(13, 13, 255, 0.712);
+}
+
+#error {
+    width: 100%;
+    text-align: center;
+    padding: 5px 10px;
+    font-size: 15px;
+    border-radius: 6px;
+    background-color: rgba(255, 0, 0, 0.5);
+}
+
+#content-form {
+    margin: 100px auto;
+    width: 500px;
+    padding:30px 90px ;
+    text-align: center;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 2px 4px 8px rgba(0,0,0,0.6)
+}
+
+textarea {
+    width: 100%;
+    resize: none;
+}
+
+body {
+    text-align: center;
+}
+
+#content-box {
+    font-family:Arial, Helvetica, sans-serif;
+    padding: 6px 15px;
+    box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.356);
+    margin-bottom: 16px;
+    width: 600px;
+    margin: 16px auto;
+    border-radius: 7px;
+}
+
+#formedit {
+    margin: 0px;
+    padding: 0px;
+    box-shadow: none;
+    width: auto;
+}
+
+#contenteditdel a{
+    padding: 10px 25px;
+    font-size: 15px;
+    border-radius: 6px;
+    background-color: rgba(18, 18, 177, 0.76);
+    border: 3px solid black;
+    margin-left: 10px; 
+}
+
+#contenteditdel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#content-boxSection {
+    margin-bottom: 80px;
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Welcome</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="base.css">
+</head>
+<body>
+    <%- include('includes/header.ejs') %>+
+    <main>
+        <h1>Welcome to this demo!</h1>
+        <p>In this demo project, you can create accounts & log in with accounts.</p>
+        <p>In addition, on the <a href="/admin">/admin page</a>, you can perform CRUD operations on blog posts.</p>
+        <p>Please note: There are no "user-facing" views (for non-logged-in users) for those blog posts.</p>
+    </main>
+</body>
+</html>

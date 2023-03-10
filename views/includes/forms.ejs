@@ -1,0 +1,9 @@
+<h1>View & Update the post</h1>
+    <form action="/posts/<%= id %>/edit" method="POST" id="content-form">
+        <h2>Update Your Blog Posts</h2>
+        <label for="title">Title of your Content</label>
+        <input type="text" name="title" id="title" value="<%= data.title %>">
+        <label for="content">Main Content</label>
+        <textarea name="content" id="content" cols="30" rows="10"><%= data.content %></textarea>
+        <button>Save</button>
+    </form>
