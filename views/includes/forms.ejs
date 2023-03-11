@@ -1,5 +1,6 @@
 <h1>View & Update the post</h1>
     <form action="/posts/<%= id %>/edit" method="POST" id="content-form">
+        <input type="hidden" name="_csrf" value="<%= locals.csrf %>">
         <h2>Update Your Blog Posts</h2>
         <label for="title">Title of your Content</label>
         <input type="text" name="title" id="title" value="<%= data.title %>">

@@ -9,6 +9,23 @@ class Post {
     this.id = id;
     this.name = name;
   }
+  static async fetchAll() {
+    const data = await db.getDb().collection("blogs").find().toArray();
+    return data
+  }
+
+  async fetch() {
+    if(!this.id) {
+      return
+    }
+
+    const postDoc = await db
+      .getDb()
+      .collection("blogs")
+      .findOne({ _id: new objectId(this.id) })
+
+      return postDoc
+  }
 
   async save() {
     const result = await db
