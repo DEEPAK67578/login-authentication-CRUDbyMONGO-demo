@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const mongodb = require("mongodb");
 const objectId = mongodb.ObjectId;
+const Post = require('../modals/post')
 
 const db = require("../data/database");
 const session = require("express-session");
@@ -23,10 +24,8 @@ router.post("/admin", async function (req, res) {
   const name = req.body.name;
   const content = req.body.content;
   const title = req.body.title;
-  await db
-    .getDb()
-    .collection("blogs")
-    .insertMany([{ name: name, content: content, title: title }]);
+  const post = new Post(name,title,content);
+  await post.save()
   res.redirect("/admin");
 });
 
@@ -45,22 +44,15 @@ router.post("/posts/:id/edit", async function (req, res) {
   const id = req.params.id;
   const title = req.body.title;
   const content = req.body.content;
-  await db
-    .getDb()
-    .collection("blogs")
-    .updateOne(
-      { _id: new objectId(id) },
-      { $set: { title: title, content: content } }
-    );
-  res.redirect("/admin",);
+  const post = new Post(null,title,content,id)
+  await post.update()
+  res.redirect("/admin");
 });
 
 router.post("/posts/:id/delete", async function (req, res) {
   const id = req.params.id;
-  await db
-    .getDb()
-    .collection("blogs")
-    .deleteOne({ _id: new objectId(id) });
+  const post = new Post(null,null,null,id)
+  post.delete()
   res.redirect("/admin");
 });
 
